@@ -7,7 +7,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('lading-' . get_locale()); ?>>
+<body <?php body_class('lading'); ?>>
     <?php wp_body_open(); ?>
     <header>
         <div class="top-line-lading">
