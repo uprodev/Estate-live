@@ -49,8 +49,8 @@ function load_style_script(){
         'cities' => $cities,
     );
     $my_script = array(
-        'more' => __('Читати далі', 'Home'),
-        'roll_up' => __('Згорнути', 'Home'),
+        'more' => __('Read more', 'Home'),
+        'roll_up' => __('Hide', 'Home'),
     );
     wp_localize_script('my-add', 'php_vars', $my_add);
     wp_localize_script('my-script', 'php_vars', $my_script);
