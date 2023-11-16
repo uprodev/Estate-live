@@ -101,3 +101,29 @@ function override_mce_options($initArray) {
 
 
 WP_Query_Allow_Postmeta_Compare::init();
+
+
+function custom_language_switcher(){
+    $languages = icl_get_languages('skip_missing=0&orderby=id&order=desc');
+    if(!empty($languages)){
+
+        echo '<div class="lang-wrap">';
+
+        foreach($languages as $index => $language){
+            if($language['active'] === '1') echo '<div class="active"><p>' . $language['native_name'] . '</p></div>';
+        }
+
+        echo '<ul>';
+
+        foreach($languages as $index => $language){
+
+            if($language['active'] !== '1') echo '<li><a href="' . $language['url'] . '">' . $language['native_name'] . '</a></li>';
+
+        }
+        
+        echo '<ul>';
+
+        echo '<div>';
+
+    }
+}

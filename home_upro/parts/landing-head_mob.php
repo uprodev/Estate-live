@@ -36,4 +36,7 @@
         <?php endif ?>
 
     </div>
+
+     <?php custom_language_switcher() ?>
+     
 </nav>

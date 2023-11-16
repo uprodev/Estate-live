@@ -7,6 +7,9 @@
     ) ); ?>
 
     <div class="btn-wrap">
+
+        <?php custom_language_switcher() ?>
+
         <div class="wrap">
 
             <?php if (($field = get_field('link_header', 'option')) && is_front_page()): ?>
