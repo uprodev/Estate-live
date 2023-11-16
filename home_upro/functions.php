@@ -45,10 +45,15 @@ function load_style_script(){
 
     $cities = get_terms(['taxonomy' => 'city', 'hide_empty' => false,]);
 
-    $dataToBePassed = array(
+    $my_add = array(
         'cities' => $cities,
     );
-    wp_localize_script('my-add', 'php_vars', $dataToBePassed);
+    $my_script = array(
+        'more' => __('Читати далі', 'Home'),
+        'roll_up' => __('Згорнути', 'Home'),
+    );
+    wp_localize_script('my-add', 'php_vars', $my_add);
+    wp_localize_script('my-script', 'php_vars', $my_script);
 }
 
 

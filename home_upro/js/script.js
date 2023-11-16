@@ -624,11 +624,11 @@ jQuery(document).ready(function ($) {
     length: 120,
     readMore: true,
  
-      readMoreText: 'Читати далі',
-    readLessText: 'Згорнути',
+      readMoreText: php_vars.more,
+    readLessText: php_vars.roll_up,
  
-      readMoreText: 'Читати далі',
-      readLessText: 'Згорнути',
+      readMoreText: php_vars.more,
+      readLessText: php_vars.roll_up,
  
   readMoreBtnPosition: 'after',
 
