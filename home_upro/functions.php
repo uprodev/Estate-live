@@ -53,7 +53,7 @@ function load_style_script(){
         'roll_up' => __('Hide', 'Home'),
     );
     wp_localize_script('my-add', 'php_vars', $my_add);
-    wp_localize_script('my-script', 'php_vars', $my_script);
+    wp_localize_script('my-script', 'my_script', $my_script);
 }
 
 
