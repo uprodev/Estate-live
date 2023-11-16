@@ -8,7 +8,9 @@
 
     <div class="btn-wrap">
 
-        <?php custom_language_switcher() ?>
+        <?php if (is_front_page()): ?>
+            <?php custom_language_switcher() ?>
+        <?php endif ?>
         
         <div class="wrap">
 
