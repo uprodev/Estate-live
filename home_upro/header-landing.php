@@ -7,7 +7,7 @@
     <?php wp_head(); ?>
 </head>
 
-<?php $body_class = 'lading ' . get_locale() ?>
+<?php $body_class = 'lading lang-' . get_locale() ?>
 
 <body <?php body_class($body_class); ?>>
     <?php wp_body_open(); ?>
