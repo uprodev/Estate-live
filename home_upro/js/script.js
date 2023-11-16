@@ -682,15 +682,24 @@ jQuery(document).ready(function ($) {
       console.log(id)
     $('body,html').animate({scrollTop: top - 100}, 1000);
   });
-	
 
-  $(document).on('click', '.menu-responsive-land .mob-menu-land > ul > li > a', function (e) {
+//scroll ua
+  $(document).on('click', '.lang-uk .menu-responsive-land .mob-menu-land > ul > li > a', function (e) {
     e.preventDefault();
     $.fancybox.close();
-    var id  = $(this).attr('href'),
+    var id  = $(this).attr('href').substr(1, 200),
         top = $(id).offset().top;
-    $('body,html').animate({scrollTop: top}, 1000);
+    $('body,html').animate({scrollTop: top - 100}, 1000);
+  });
 
+
+  //scroll En
+  $(document).on('click', '.lang-en_US .menu-responsive-land .mob-menu-land > ul > li > a', function (e) {
+    e.preventDefault();
+    $.fancybox.close();
+    var id  = $(this).attr('href').substr(4, 200),
+      top = $(id).offset().top;
+    $('body,html').animate({scrollTop: top - 100}, 1000);
   });
 
   //fix header
