@@ -15,5 +15,5 @@ jobs:
           username: homed
           password: oz9uMzsKaDC1xxz1
           protocol: ftps
-          server-dir: /web/homedev.com.ua/public_html/wp-content/themes
+          server-dir: /web/homedev.com.ua/public_html/wp-content/themes/
 
