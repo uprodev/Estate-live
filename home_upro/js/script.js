@@ -618,24 +618,17 @@ jQuery(document).ready(function ($) {
     $('body,html').animate({scrollTop: top - 100}, 1000);
   });
 
-console.log(my_script.roll_up);
-
   new Cuttr('.lading .team .item .info', {
     //options here
     truncate: 'characters',
     length: 120,
     readMore: true,
  
-      /*readMoreText: php_vars.more,
-    readLessText: php_vars.roll_up,
+      readMoreText: my_script.more,
+    readLessText: my_script.roll_up,
  
-      readMoreText: php_vars.more,
-      readLessText: php_vars.roll_up,*/
-    readMoreText: 'Читати далі',
-    readLessText: 'Згорнути',
- 
-      readMoreText: 'Читати далі',
-      readLessText: 'Згорнути',
+      readMoreText: my_script.more,
+      readLessText: my_script.roll_up,
  
   readMoreBtnPosition: 'after',
 
