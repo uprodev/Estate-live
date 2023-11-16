@@ -618,6 +618,8 @@ jQuery(document).ready(function ($) {
     $('body,html').animate({scrollTop: top - 100}, 1000);
   });
 
+console.log(php_vars.more);
+
   new Cuttr('.lading .team .item .info', {
     //options here
     truncate: 'characters',
