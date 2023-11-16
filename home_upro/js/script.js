@@ -627,8 +627,8 @@ jQuery(document).ready(function ($) {
       readMoreText: 'Читати далі',
     readLessText: 'Згорнути',
  
-      readMoreText: 'Читать далее',
-      readLessText: 'Свернуть',
+      readMoreText: 'Читати далі',
+      readLessText: 'Згорнути',
  
   readMoreBtnPosition: 'after',
 
