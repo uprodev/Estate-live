@@ -648,21 +648,41 @@ jQuery(document).ready(function ($) {
     $(this).closest('.open').removeClass('open')
   });
 
-  //scroll
-  $(document).on('click', '.page-template-landing .top-menu-lading>ul>li>a', function (e) {
+  //scroll en
+  $(document).on('click', '.lang-en_US.page-template-landing .top-menu-lading>ul>li>a', function (e) {
+    e.preventDefault();
+    var id  = $(this).attr('href').substr(4, 100),
+        top = $(id).offset().top;
+    $('body,html').animate({scrollTop: top}, 1000);
+  });
+
+  $(document).on('click', '.lang-en_US.lading header .btn-border', function (e) {
+    e.preventDefault();
+    var id  = $(this).attr('href').substr(4, 200),
+      top = $(id).offset().top;
+      console.log(id)
+    $('body,html').animate({scrollTop: top - 100}, 1000);
+  });
+	
+	
+	
+	
+	  //scroll ua
+  $(document).on('click', '.lang-uk.page-template-landing .top-menu-lading>ul>li>a', function (e) {
     e.preventDefault();
     var id  = $(this).attr('href').substr(1, 100),
         top = $(id).offset().top;
     $('body,html').animate({scrollTop: top}, 1000);
   });
 
-  $(document).on('click', '.lading header .btn-border', function (e) {
+  $(document).on('click', '.lang-uk.lading header .btn-border', function (e) {
     e.preventDefault();
     var id  = $(this).attr('href').substr(1, 200),
       top = $(id).offset().top;
       console.log(id)
     $('body,html').animate({scrollTop: top - 100}, 1000);
   });
+	
 
   $(document).on('click', '.menu-responsive-land .mob-menu-land > ul > li > a', function (e) {
     e.preventDefault();
@@ -687,6 +707,13 @@ jQuery(document).ready(function ($) {
       $(document).on('click', '.lading header .nice-select .list li a, .top-line .nice-select .list li a, .menu-responsive-land .btn-wrap .nice-select .list li a', function (e){
 
         $(this).closest('.open').removeClass('open')
-      })
+      });
+	
+	
+	
+	  $(document).on('click', '.lang-wrap p', function (e) {
+    e.preventDefault();
+    $('.lang-wrap').toggleClass('is-open')
+  });
 
 });
