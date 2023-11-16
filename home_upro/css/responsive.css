@@ -1,0 +1,15 @@
+@media (max-width: 1280px) {
+  .content-width {
+    width: 960px; } }
+@media (max-width: 991px) {
+  .content-width {
+    width: 720px; } }
+@media (max-width: 767px) {
+  .content-width {
+    width: 540px; } }
+@media (max-width: 575px) {
+  .content-width {
+    width: 100%;
+    padding: 0 10px; } }
+
+/*# sourceMappingURL=responsive.css.map */

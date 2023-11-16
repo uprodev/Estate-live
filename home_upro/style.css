@@ -1,0 +1,66 @@
+/*
+Theme Name: Home Dev
+*/
+
+a.disabled{
+	pointer-events: none;
+  opacity: 0.5;
+}
+.add_object_to_selection{
+  width: 26px;
+  margin: 0 6px;
+}
+.add_object_to_selection a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  width: 100%;
+  border: 1px solid rgba(123, 147, 255, 1);
+  background: #fff;
+  border-radius: 100%;
+  height: 26px;
+}
+.add_object_to_selection a img{
+  display: none;
+}
+.add_object_to_selection a img:first-child{
+  display: block;
+  width: 100%;
+}
+.add_object_to_selection.is_added a img:first-child{
+  display: none;
+}
+.add_object_to_selection.is_added a{
+  background: #7B93FF;
+}
+.add_object_to_selection.is_added a img:last-child{
+  display: block;
+  width: 100%;
+}
+
+.loading-dz {
+  display: none;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+.loading-dz:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #7B93FF transparent #7B93FF transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
