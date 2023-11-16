@@ -121,9 +121,9 @@ function custom_language_switcher(){
 
         }
         
-        echo '<ul>';
+        echo '</ul>';
 
-        echo '<div>';
+        echo '</div>';
 
     }
 }
