@@ -13,7 +13,7 @@ jobs:
         with:
           server: homedev.com.ua
           username: homed
-          password: oz9uMzsKaDC1xxz1
+          password: ${{ secrets.pswd }}
           protocol: ftps
           server-dir: /web/homedev.com.ua/public_html/wp-content/themes/
 
