@@ -414,7 +414,7 @@ function create_selection_for_client(){
 	$objects[] = $_POST['object_id'];
 	update_field('objects', $objects, $post_id);
 
-	echo get_permalink($post_id);
+	echo get_permalink(144);
 
 	die();
 }
