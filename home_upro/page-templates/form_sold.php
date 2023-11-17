@@ -88,7 +88,7 @@ if (!is_user_logged_in()) {
 							<!-- <input type="hidden" name="draft"> -->
 							<div class="input-submit flex">
 								<button type="submit" class="btn-default btn" id="form_sold_publish"><?php _e('Зберегти', 'Home') ?></button>
-								<button type="reset" class="btn-default btn-border btn"><?php _e('Скинути', 'Home') ?></button>
+								<button type="reset" class="btn-default btn-border btn"><?php _e('Скасувати', 'Home') ?></button>
 							</div>
 							<input type="hidden" name="object_id" value="<?= $_GET['object_id'] ?>">
 							<input type="hidden" name="action" value="form_sold">
