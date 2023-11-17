@@ -405,10 +405,14 @@ function create_selection_for_client(){
 		'post_title'    => $_POST['selection_title'],
 		'post_type'  => 'selection',
 		'post_status'   => 'publish',
-		'meta_input'    => ['buyer_name' => $_POST['client_name']],
+		'meta_input'    => ['buyer_name' => $_POST['client_name'], 'buyer_phone' => $_POST['client_phone']],
 	);
 
 	$post_id = wp_insert_post($post_data);
+
+	$objects = get_field('objects', $post_id, false);
+	$objects[] = $_POST['object_id'];
+	update_field('objects', $objects, $post_id);
 
 	echo get_permalink($post_id);
 

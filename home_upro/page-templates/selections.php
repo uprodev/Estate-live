@@ -32,9 +32,9 @@ if($wp_query->have_posts()):
                     <p><a href="tel:+<?= preg_replace('/[^0-9]/', '', $field) ?>"><?= $field ?></a></p>
                 <?php endif ?>
 
-            </div>
-            <div class="btn-wrap btn-add">
-                <a href="<?= get_the_permalink(1719) . '?client_name=' . get_field('buyer_name', $_GET['selection_id']) . '&client_phone=' . get_field('buyer_phone', $_GET['selection_id']) ?>"><img src="<?= get_stylesheet_directory_uri() ?>/img/icon-100.svg" alt=""><?php _e('додати підбір', 'Home') ?></a>
+                <div class="btn-wrap btn-add">
+                    <a href="<?= get_the_permalink(1719) . '?client_name=' . get_field('buyer_name', $_GET['selection_id']) . '&client_phone=' . get_field('buyer_phone', $_GET['selection_id']) . '&object_id=' . $_GET['object_id'] ?>"><img src="<?= get_stylesheet_directory_uri() ?>/img/icon-100.svg" alt=""><?php _e('додати підбір', 'Home') ?></a>
+                </div>
             </div>
             <div class="content">
 

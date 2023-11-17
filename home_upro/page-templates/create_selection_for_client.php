@@ -35,6 +35,7 @@ if (!is_user_logged_in()) {
 							</div>
 							<input type="hidden" name="client_name" value="<?= $_GET['client_name'] ?>">
 							<input type="hidden" name="client_phone" value="<?= $_GET['client_phone'] ?>">
+							<input type="hidden" name="object_id" value="<?= $_GET['object_id'] ?>">
 							<input type="hidden" name="action" value="create_selection_for_client">
 						</form>
 
