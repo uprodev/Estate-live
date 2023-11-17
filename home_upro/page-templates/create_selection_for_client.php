@@ -13,7 +13,7 @@ if (!is_user_logged_in()) {
 
 <?php get_header(); ?>
 
-<?php if ($_GET['object_id']): ?>
+<?php if ($_GET['client_name']): ?>
 
 	<section class="home-block add-form">
 		<div class="content-width">

@@ -9,6 +9,7 @@ $actions = [
 	'object_to_publish',
 	'form_sold',
 	'create_selection',
+	'create_selection_for_client',
 	'delete_object_from_selection',
 	'delete_object_from_favourite',
 	'delete_object',
@@ -391,6 +392,23 @@ function create_selection(){
 	$objects = get_field('objects', $post_id, false);
 	$objects[] = $_POST['object_id'];
 	update_field('objects', $objects, $post_id);
+
+	echo get_permalink($post_id);
+
+	die();
+}
+
+
+function create_selection_for_client(){
+
+	$post_data = array(
+		'post_title'    => $_POST['selection_title'],
+		'post_type'  => 'selection',
+		'post_status'   => 'publish',
+		'meta_input'    => ['buyer_name' => $_POST['client_name']],
+	);
+
+	$post_id = wp_insert_post($post_data);
 
 	echo get_permalink($post_id);
 

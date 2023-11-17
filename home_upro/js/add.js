@@ -406,6 +406,29 @@ jQuery(document).ready(function($) {
 	});
 
 
+	function create_selection_for_client() {
+
+		$.ajax({
+			url: "/wp-admin/admin-ajax.php",
+			data: $("#create_selection_for_client").serialize(),
+			type: 'POST',
+			success: function (data) {
+				if (data) {
+					window.location.href = data;
+				} else {
+					console.log('Error!');
+				}
+			},
+		});
+		return false;
+	}
+
+	$(document).on('submit', '#create_selection_for_client', function(e){
+		e.preventDefault();
+		create_selection_for_client();
+	});
+
+
 	function create_selection() {
 
 		$.ajax({
