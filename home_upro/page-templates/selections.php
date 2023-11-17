@@ -34,7 +34,7 @@ if($wp_query->have_posts()):
 
             </div>
             <div class="btn-wrap btn-add">
-                <a href="<?= get_the_permalink(1719) . '?client_name=' . get_field('buyer_name', $_GET['selection_id']) ?>"><img src="<?= get_stylesheet_directory_uri() ?>/img/icon-100.svg" alt=""><?php _e('додати підбір', 'Home') ?></a>
+                <a href="<?= get_the_permalink(1719) . '?client_name=' . get_field('buyer_name', $_GET['selection_id'] . '&client_phone=' . get_field('buyer_phone', $_GET['selection_id']) ?>"><img src="<?= get_stylesheet_directory_uri() ?>/img/icon-100.svg" alt=""><?php _e('додати підбір', 'Home') ?></a>
             </div>
             <div class="content">
 
