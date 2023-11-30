@@ -317,27 +317,29 @@
           </div>
         <?php endif ?>
 
-        <?php 
-        $terms = get_terms( [
-          'taxonomy' => 'turn',
-          'hide_empty' => false,
-        ] ) 
-        ?>
+        <?php if (is_user_logged_in()): ?>
 
-        <?php if ($terms): ?>
-          <div class="input-wrap input-wrap-popup input-wrap-var-1">
-            <p class="label-info"><?php _e('Черга', 'Home') ?></p>
-            <div class="nice-select">
-              <span class="current"><?php _e('Черга', 'Home') ?></span>
-              <div class="list">
-                <ul class="new" id="get_turns">
-                  <li class="option selected focus">
-                    <label for="turn-0"></label>
-                    <input type="radio" id="turn-0" name="turn" value="" checked>
-                    <?php _e('Всі', 'Home') ?>
-                  </li>
+          <?php 
+          $terms = get_terms( [
+            'taxonomy' => 'turn',
+            'hide_empty' => false,
+          ] ) 
+          ?>
 
-                  <?php foreach ($terms as $index => $term): ?>
+          <?php if ($terms): ?>
+            <div class="input-wrap input-wrap-popup input-wrap-var-1">
+              <p class="label-info"><?php _e('Черга', 'Home') ?></p>
+              <div class="nice-select">
+                <span class="current"><?php _e('Черга', 'Home') ?></span>
+                <div class="list">
+                  <ul class="new" id="get_turns">
+                    <li class="option selected focus">
+                      <label for="turn-0"></label>
+                      <input type="radio" id="turn-0" name="turn" value="" checked>
+                      <?php _e('Всі', 'Home') ?>
+                    </li>
+
+                    <?php foreach ($terms as $index => $term): ?>
                     <!-- <li class="option">
                       <label for="turn-<?= $index + 1 ?>"></label>
                       <input type="radio" id="turn-<?= $index + 1 ?>" name="turn" value="<?= $term->term_id ?>">
@@ -436,13 +438,14 @@
             </div>
           </div>
         <?php endif ?>
-
-      </div>
-      <div class="input-submit flex">
-        <button type="submit" class="btn-default btn"><?php _e('Застосувати', 'Home') ?></button>
-        <button type="reset" class="btn-default btn-border btn"><?php _e('Очистити', 'Home') ?></button>
-      </div>
-      <input type="hidden" name="action" value="filter_objects">
+      <?php endif ?>
+      
     </div>
+    <div class="input-submit flex">
+      <button type="submit" class="btn-default btn"><?php _e('Застосувати', 'Home') ?></button>
+      <button type="reset" class="btn-default btn-border btn"><?php _e('Очистити', 'Home') ?></button>
+    </div>
+    <input type="hidden" name="action" value="filter_objects">
   </div>
+</div>
 </form>
