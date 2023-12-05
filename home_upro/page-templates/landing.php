@@ -86,7 +86,7 @@ $wp_query = new WP_Query(array(
 ));
 ?>
 
-<?php if ($terms && $wp_query->have_posts()): ?>
+<?php if ($terms): ?>
 
     <?php
     switch ($terms[0]->name) {
@@ -120,19 +120,23 @@ $wp_query = new WP_Query(array(
                 <?php endif ?>
 
             </div>
+
             <div class="content" id="response_objects">
 
-                <?php $current_user_id = get_current_user_id() ?>
+                <?php if ($wp_query->have_posts()): ?>
+                    <?php $current_user_id = get_current_user_id() ?>
 
-                <?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
+                    <?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
 
-                    <?php get_template_part('parts/content', 'objects', ['object_id' => get_the_ID(), 'current_user_id' => $current_user_id]) ?>
+                        <?php get_template_part('parts/content', 'objects', ['object_id' => get_the_ID(), 'current_user_id' => $current_user_id]) ?>
 
-                    <?php
-                endwhile;
-                wp_reset_query();
-                ?>
+                        <?php
+                    endwhile;
+                    wp_reset_query();
+                    ?>
 
+                <?php endif ?>
+                
             </div>
 
             <?php if ($field = get_field('link_2_2')): ?>
