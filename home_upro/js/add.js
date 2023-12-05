@@ -849,6 +849,7 @@ jQuery(document).ready(function($) {
 					$('.home-block.home-block-default.bg-white .title h2 span').text(region_name);
 					if($('.pagination-wrap').length > 0) $('.pagination-wrap').empty();
 					if($('.to_catalog, li.li_to_catalog a').length > 0) $('.to_catalog, li.li_to_catalog a').attr('href', '/catalog/?region_id=' + region_id);
+					if($('#objects').length > 0) $('#objects').css('display', 'block');
 					$("#response_objects").html(data);
 					$('.item-home .text-info').Cuttr({
 						truncate: 'words',

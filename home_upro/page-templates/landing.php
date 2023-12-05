@@ -108,7 +108,7 @@ $wp_query = new WP_Query(array(
     }
     ?>
 
-    <section class="home-block home-block-default bg-white" id="objects">
+    <section class="home-block home-block-default bg-white" id="objects" style="display: <?= $wp_query->have_posts() ? 'block' : 'none' ?>;">
         <div class="content-width">
             <div class="title">
                 <h2><?= __('Об’єкти в', 'Home') . ' ' ?> <span><?= $region_name ?></span></h2>
@@ -136,7 +136,7 @@ $wp_query = new WP_Query(array(
                     ?>
 
                 <?php endif ?>
-                
+
             </div>
 
             <?php if ($field = get_field('link_2_2')): ?>
