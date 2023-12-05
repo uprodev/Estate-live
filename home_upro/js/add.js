@@ -717,7 +717,7 @@ jQuery(document).ready(function($) {
 		$("#dZUpload").dropzone({
 
 			url: url,
-			maxFiles: $('#upload_user_avatar').length  ? 1 : 10,
+			maxFiles: $('#upload_user_avatar').length  ? 1 : 1000,
 
      // autoProcessQueue: false ,
 			thumbnailWidth: 640,
