@@ -743,6 +743,7 @@ jQuery(document).ready(function($) {
 						var id = childDropzoneArr[l];
 						$(this).find('a').attr('data-id', id);
 						$('.input-submit button').prop('disabled', false)
+            console.log(id)
 					})
 					$('[name="images"]').val(childDropzoneArr.join(','));
 
@@ -817,7 +818,7 @@ jQuery(document).ready(function($) {
     tolerance: 'pointer',
     stop: function () {
       childDropzoneArr = [];
-      $('#dZUpload figure.dz-image-preview').each(function(l){
+      $('#dZUpload figure.dz-image-preview').each(function(){
 
         var id = $(this).find('a').attr('data-id');
         childDropzoneArr.push(id);
