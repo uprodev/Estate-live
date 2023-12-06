@@ -739,14 +739,10 @@ jQuery(document).ready(function($) {
 				this.on("complete", function(file, data) {
 
 					$('#dZUpload figure.dz-image-preview').each(function(l){
-
 						var id = childDropzoneArr[l];
-            //console.log(l)
 						$(this).find('a').attr('data-id', id);
-
 						$('.input-submit button').prop('disabled', false)
 					})
-
 					$('[name="images"]').val(childDropzoneArr.join(','));
 
 				});
@@ -790,7 +786,7 @@ jQuery(document).ready(function($) {
 		})
 
 		childDropzoneArr = childDropzoneArr.filter(onlyUnique);
- 
+
 		$('[name="images"]').val(childDropzoneArr.join(','))
 
 		$.ajax({
@@ -809,6 +805,26 @@ jQuery(document).ready(function($) {
 			}
 		});
 	})
+
+
+  $("#dZUpload").sortable({
+    items:'.dz-image-preview',
+    cursor: 'move',
+    opacity: 0.5,
+    containment: '#dZUpload',
+    distance: 20,
+    tolerance: 'pointer',
+    stop: function () {
+
+      $('#dZUpload figure.dz-image-preview').each(function(l){
+        var id = childDropzoneArr[l];
+        $(this).find('a').attr('data-id', id);
+        $('.input-submit button').prop('disabled', false)
+      })
+      $('[name="images"]').val(childDropzoneArr.join(','));
+
+    }
+  });
 
 
 	$(document).on('click', 'nav.top-menu-lading li.region, nav.mob-menu-land li.region', function(e){
