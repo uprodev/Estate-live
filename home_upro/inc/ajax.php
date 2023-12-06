@@ -594,6 +594,7 @@ function get_builders() {
 		$builders = get_posts( [
 			'post_type' => 'builder',
 			'posts_per_page' => -1,
+			'post_parent' => 0,
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'city',
