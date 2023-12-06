@@ -812,7 +812,7 @@ jQuery(document).ready(function($) {
     cursor: 'move',
     opacity: 0.5,
     containment: '#dZUpload',
-    distance: 20,
+    distance: 20, 
     tolerance: 'pointer',
     stop: function () {
 
