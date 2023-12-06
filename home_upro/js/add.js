@@ -1,4 +1,5 @@
 var DZ
+var  childDropzoneArr = [];
 jQuery(document).ready(function($) {
 
 	$(document).on('change', 'input[name="tax_city"], input[name="city"]', function(){
@@ -705,7 +706,7 @@ jQuery(document).ready(function($) {
 		});
 
 
-	var  childDropzoneArr = [];
+
 	function addChildDropzone() {
 
 
@@ -812,7 +813,7 @@ jQuery(document).ready(function($) {
     cursor: 'move',
     opacity: 0.5,
     containment: '#dZUpload',
-    distance: 20, 
+    distance: 20,
     tolerance: 'pointer',
     stop: function () {
 
