@@ -816,12 +816,13 @@ jQuery(document).ready(function($) {
     distance: 20,
     tolerance: 'pointer',
     stop: function () {
-
+      childDropzoneArr = [];
       $('#dZUpload figure.dz-image-preview').each(function(l){
-        var id = childDropzoneArr[l];
-        $(this).find('a').attr('data-id', id);
-        $('.input-submit button').prop('disabled', false)
+
+        var id = $(this).find('a').attr('data-id');
+        childDropzoneArr.push(id);
       })
+      console.log(childDropzoneArr)
       $('[name="images"]').val(childDropzoneArr.join(','));
 
     }
