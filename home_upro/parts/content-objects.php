@@ -148,12 +148,21 @@
 
 <?php endif ?>
 
-<?php if (get_field('superficiality') && get_field('over') && $object_type->term_id != 13): ?>
+<?php if (get_field('superficiality') && get_field('over') && $object_type->term_id != 8 && $object_type->term_id != 9 && $object_type->term_id != 11 && $object_type->term_id != 13): ?>
 <li>
 	<div class="img-wrap">
 		<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-7-3.svg" alt="">
 	</div>
 	<p><?= get_field('over') . ' ' .  __('з', 'Home') . ' ' . get_field('superficiality') ?></p>
+</li>
+<?php endif ?>
+
+<?php if (get_field('number_of_floors') && ($object_type->term_id == 8 || $object_type->term_id == 9 || $object_type->term_id == 11)): ?>
+<li>
+	<div class="img-wrap">
+		<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-7-3.svg" alt="">
+	</div>
+	<p><?= get_field('number_of_floors') ?></p>
 </li>
 <?php endif ?>
 
