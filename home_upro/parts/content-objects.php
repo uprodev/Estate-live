@@ -59,11 +59,9 @@
 			?>
 
 			<?php if ($builder): ?>
- 
 				<li class="bg-black">
 					<a href="#"><?= $builder->post_title ?></a>
 				</li>
-
 			<?php endif ?>
 
 		</ul>
