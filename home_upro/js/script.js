@@ -660,7 +660,7 @@ jQuery(document).ready(function ($) {
   $(document).on('click', '.lang-en_US.lading header .btn-border', function (e) {
     e.preventDefault();
     var id  = $(this).attr('href').substr(4, 200),
-      top = $(id).offset().top;
+        top = $(id).offset().top;
       console.log(id);
     $('body,html').animate({scrollTop: top - 100}, 1000);
   });
