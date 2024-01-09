@@ -183,12 +183,15 @@ jQuery(document).ready(function($) {
 			success: function (data) {
 				if (data) {
 					let cities = JSON.parse(data.slice(0, -1));
-					console.log(typeof(cities));
-					cities = cities.map(function (city) {
+					/*cities = cities.map(function (city) {
 						return city.name
-					})
+					})*/
+					cities_ = [];
+					for (var i = 0; i < cities.length; i++) {
+						cities_.push(cities[i].name)
+					}
 					$('input[name="city"]').autocomplete({
-						source: cities,
+						source: cities_,
 					});
 				} else {
 					console.log('Error!');
