@@ -651,8 +651,8 @@ jQuery(document).ready(function ($) {
   //scroll en
   $(document).on('click', '.lang-en_US.page-template-landing .top-menu-lading>ul>li>a', function (e) {
     e.preventDefault();
-    var id  = $(this).attr('href').substr(4, 100),
-        top = $(id).offset().top;
+    var id  = $(this).attr('href').substr(4, 100);
+        //top = $(id).offset().top;
     console.log(id)
     $('body,html').animate({scrollTop: top}, 1000);
   });
