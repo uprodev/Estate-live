@@ -183,7 +183,7 @@ jQuery(document).ready(function($) {
 			success: function (data) {
 				if (data) {
 					let cities = JSON.parse(data.slice(0, -1));
-					typeof(cities);
+					console.log(typeof(cities));
 					cities = cities.map(function (city) {
 						return city.name
 					})
