@@ -190,6 +190,7 @@ jQuery(document).ready(function($) {
 					for (var i = 0; i < cities.length; i++) {
 						cities_.push(cities[i].name)
 					}
+					console.log(cities_)
 					$('input[name="city"]').autocomplete({
 						source: cities_,
 					});
