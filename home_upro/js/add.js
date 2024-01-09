@@ -743,7 +743,7 @@ jQuery(document).ready(function($) {
 						var id = childDropzoneArr[l];
 						$(this).find('a').attr('data-id', id);
 						$('.input-submit button').prop('disabled', false)
-            console.log(id)
+						console.log(id)
 					})
 					$('[name="images"]').val(childDropzoneArr.join(','));
 
@@ -809,25 +809,25 @@ jQuery(document).ready(function($) {
 	})
 
 
-  $("#dZUpload").sortable({
-    items:'.dz-image-preview',
-    cursor: 'move',
-    opacity: 0.5,
-    containment: '#dZUpload',
-    distance: 20,
-    tolerance: 'pointer',
-    stop: function () {
-      childDropzoneArr = [];
-      $('#dZUpload figure.dz-image-preview').each(function(){
+	$("#dZUpload").sortable({
+		items:'.dz-image-preview',
+		cursor: 'move',
+		opacity: 0.5,
+		containment: '#dZUpload',
+		distance: 20,
+		tolerance: 'pointer',
+		stop: function () {
+			childDropzoneArr = [];
+			$('#dZUpload figure.dz-image-preview').each(function(){
 
-        var id = $(this).find('a').attr('data-id');
-        childDropzoneArr.push(id);
-      })
-      console.log(childDropzoneArr)
-      $('[name="images"]').val(childDropzoneArr.join(','));
+				var id = $(this).find('a').attr('data-id');
+				childDropzoneArr.push(id);
+			})
+			console.log(childDropzoneArr)
+			$('[name="images"]').val(childDropzoneArr.join(','));
 
-    }
-  });
+		}
+	});
 
 
 	$(document).on('click', 'nav.top-menu-lading li.region, nav.mob-menu-land li.region', function(e){
@@ -873,6 +873,10 @@ jQuery(document).ready(function($) {
 					$('.item-home .text-info').Cuttr({
 						truncate: 'words',
 						length: 25
+					});
+					$('.item-home .text-wrap .btn-dot .object_region, .inner-home-block .link-map-wrap .object_region').Cuttr({
+						truncate: 'characters',
+						length: 22
 					});
 				} else {
 					console.log('Error!');
