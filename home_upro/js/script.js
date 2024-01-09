@@ -659,10 +659,10 @@ jQuery(document).ready(function ($) {
 
   $(document).on('click', '.lang-en_US.lading header .btn-border', function (e) {
     e.preventDefault();
-    console.log($(this).attr('href').substr(4, 200));
+      console.log($(this).attr('href').substr(4, 200));
     var id  = $(this).attr('href').substr(4, 200),
         top = $(id).offset().top;
-     
+
     $('body,html').animate({scrollTop: top - 100}, 1000);
   });
 	
