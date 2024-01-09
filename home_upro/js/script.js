@@ -661,7 +661,7 @@ jQuery(document).ready(function ($) {
     e.preventDefault();
     var id  = $(this).attr('href').substr(4, 200);
       //top = $(id).offset().top;
-      console.log(id)
+      console.log(id);
     //$('body,html').animate({scrollTop: top - 100}, 1000);
   });
 	
