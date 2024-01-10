@@ -51,8 +51,6 @@ if($wp_query->have_posts()):
 
 	</div>
 
-<?php else: ?>
-Nothing
 <?php endif ?>
 
 <?php get_template_part('parts/pagination') ?>
