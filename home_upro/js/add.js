@@ -191,10 +191,9 @@ jQuery(document).ready(function($) {
 						cities_.push(cities.i.name)
 					}*/
 					$.each(cities,function(key,val){
-						console.log(key); 
-						console.log(val); 
+						cities_.push(val.name);
 					})
-					//console.log(cities_);
+					console.log(cities_);
 					$('input[name="city"]').autocomplete({
 						source: cities_,
 					});
