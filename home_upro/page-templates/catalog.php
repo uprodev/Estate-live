@@ -14,7 +14,7 @@ $paged = ( isset( $my_query_array['paged'] ) && !empty( $my_query_array['paged']
 $region = $_GET['region_id'] ? array(
 	'taxonomy' => 'city', 
 	'field' => 'id', 
-	'terms' => $_GET['region_id'], 
+	'terms' => (int)$_GET['region_id'], 
 ) : '';
 
 $wp_query = new WP_Query(array(
@@ -50,7 +50,7 @@ if($wp_query->have_posts()):
 		<?php endwhile; ?>
 
 	</div>
-	
+
 <?php else: ?>
 Nothing
 <?php endif ?>
