@@ -187,10 +187,14 @@ jQuery(document).ready(function($) {
 						return city.name
 					})*/
 					cities_ = [];
-					for (var i = 0; i < cities.length; i++) {
+					/*for (var i = 0; i < cities.length; i++) {
 						cities_.push(cities.i.name)
-					}
-					console.log(cities_);
+					}*/
+					$.each(deniedTimeIDs,function(key,val){
+						console.log(key); 
+						console.log(val); 
+					})
+					//console.log(cities_);
 					$('input[name="city"]').autocomplete({
 						source: cities_,
 					});
