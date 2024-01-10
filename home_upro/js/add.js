@@ -190,7 +190,7 @@ jQuery(document).ready(function($) {
 					/*for (var i = 0; i < cities.length; i++) {
 						cities_.push(cities.i.name)
 					}*/
-					$.each(deniedTimeIDs,function(key,val){
+					$.each(cities,function(key,val){
 						console.log(key); 
 						console.log(val); 
 					})
