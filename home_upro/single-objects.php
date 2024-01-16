@@ -114,7 +114,7 @@ $is_sold = wp_get_object_terms(get_the_ID(), 'sold') ?: '';
                                     <?php foreach($images as $image): ?>
 
                                         <div class="swiper-slide">
-                                            <?= wp_get_attachment_image($image['ID'], 'medium') ?>
+                                            <img src="<?= $image['url'] ?>" alt="">
                                         </div>
 
                                     <?php endforeach; ?>

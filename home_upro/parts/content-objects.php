@@ -24,7 +24,7 @@
 
 		<a href="<?php the_permalink() ?>">
 			<?php if (has_post_thumbnail()): ?>
-				<?php the_post_thumbnail('medium') ?>
+				<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'large') ?>" alt="">
 			<?php else: ?>
 				<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-10.svg" alt="">
 			<?php endif ?>
