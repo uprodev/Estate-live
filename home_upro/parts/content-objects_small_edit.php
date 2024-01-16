@@ -5,7 +5,7 @@
     <?php if (has_post_thumbnail()): ?>
         <figure>
             <a href="<?php the_permalink() ?>">
-                <?php the_post_thumbnail('full') ?>
+                <?php the_post_thumbnail('medium') ?>
             </a>
         </figure>
     <?php endif ?>
