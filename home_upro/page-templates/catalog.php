@@ -50,7 +50,7 @@ $wp_query = new WP_Query(array(
 			<?php endwhile; ?>
 
 		<?php else: ?>
-			<h2><?php _e("Об'єктів не знайдено", 'Estate') ?></h2>
+			<?php _e("Об'єктів не знайдено", 'Estate') ?>
 		<?php endif ?>
 
 	</div>
