@@ -892,6 +892,14 @@ jQuery(document).ready(function($) {
 		return false;
 	});
 
+
+	$(document).on('click', '.menu-responsive-land .nice-select .list li a', function (e){
+		$('body').removeClass('is-active');
+		$.fancybox.close();
+		$('header').removeClass('is-active');
+		$('html').removeClass('is-menu');
+	});
+
 });
 
 let button = document.getElementById("application_submit");
