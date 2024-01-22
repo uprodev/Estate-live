@@ -899,6 +899,7 @@ jQuery(document).ready(function($) {
 		$('header').removeClass('is-active');
 		$('html').removeClass('is-menu');
 	});
+	
 
 });
 
