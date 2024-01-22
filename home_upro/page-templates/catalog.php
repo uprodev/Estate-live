@@ -29,10 +29,7 @@ $wp_query = new WP_Query(array(
 		),
 		$region,
 	), 
-	'paged' => $paged));
-
-if($wp_query->have_posts()): 
-	?>
+	'paged' => $paged)); ?>
 
 	<?php if ($_GET['object_added'] || $_GET['object_edited']): ?>
 		<h2><?= $_GET['object_added'] ? "Об'єкт " . get_the_title((int)$_GET['object_added']) . " додано" : "Об'єкт " . get_the_title((int)$_GET['object_edited']) . " відредаговано" ?></h2>
@@ -41,20 +38,25 @@ if($wp_query->have_posts()):
 
 	<div class="content" id="response_objects">
 
-		<?php $current_user_id = get_current_user_id() ?>
-		
-		<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
+		<?php if($wp_query->have_posts()): 
+			?>
 
-			<?php get_template_part('parts/content', 'objects', ['object_id' => get_the_ID(), 'current_user_id' => $current_user_id]) ?>
+			<?php $current_user_id = get_current_user_id() ?>
 
-		<?php endwhile; ?>
+			<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
+
+				<?php get_template_part('parts/content', 'objects', ['object_id' => get_the_ID(), 'current_user_id' => $current_user_id]) ?>
+
+			<?php endwhile; ?>
+
+		<?php else: ?>
+			<h2><?php _e("Об'єктів не знайдено", 'Estate') ?></h2>
+		<?php endif ?>
 
 	</div>
 
-<?php endif ?>
+	<?php get_template_part('parts/pagination') ?>
 
-<?php get_template_part('parts/pagination') ?>
+	<?php wp_reset_query() ?>
 
-<?php wp_reset_query() ?>
-
-<?php get_footer(); ?>
+	<?php get_footer(); ?>
