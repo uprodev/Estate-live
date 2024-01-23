@@ -686,13 +686,22 @@ jQuery(document).ready(function ($) {
   });
 
 //scroll ua
-  $(document).on('click', '.lang-uk .menu-responsive-land .mob-menu-land > ul > li > a, .menu-responsive-land .btn-wrap .btn-border', function (e) {
+  $(document).on('click', '.lang-uk .menu-responsive-land .mob-menu-land > ul > li > a', function (e) {
     e.preventDefault();
     $.fancybox.close();
     var id  = $(this).attr('href').substr(1, 200),
         top = $(id).offset().top;
     $('body,html').animate({scrollTop: top - 100}, 1000);
   });
+
+  $(document).on('click', '.menu-responsive-land .btn-wrap .btn-border', function (e) {
+    e.preventDefault();
+    $.fancybox.close();
+    var id  = $(this).attr('href'),
+      top = $(id).offset().top;
+    $('body,html').animate({scrollTop: top - 100}, 1000);
+  });
+
 
 
   //scroll En
