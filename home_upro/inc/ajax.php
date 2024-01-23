@@ -667,7 +667,7 @@ function select_region(){
 
 	$wp_query = new WP_Query(array(
 		'post_type' => 'objects', 
-		'posts_per_page' => 16, 
+		'posts_per_page' => -1, 
 		'post_status' => 'publish',
 		'tax_query' => array(
 			'relation' => 'AND',
