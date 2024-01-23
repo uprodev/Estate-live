@@ -659,7 +659,7 @@ jQuery(document).ready(function ($) {
 
   $(document).on('click', '.lang-en_US.lading header .btn-border', function (e) {
     e.preventDefault();
-    
+
     var id  = $(this).attr('href').substr(4, 200),
         top = $(id).offset().top;
 
@@ -686,7 +686,7 @@ jQuery(document).ready(function ($) {
   });
 
 //scroll ua
-  $(document).on('click', '.lang-uk .menu-responsive-land .mob-menu-land > ul > li > a', function (e) {
+  $(document).on('click', '.lang-uk .menu-responsive-land .mob-menu-land > ul > li > a, .menu-responsive-land .btn-wrap .btn-border', function (e) {
     e.preventDefault();
     $.fancybox.close();
     var id  = $(this).attr('href').substr(1, 200),
