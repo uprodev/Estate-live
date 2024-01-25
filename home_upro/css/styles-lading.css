@@ -1002,7 +1002,7 @@ header{
   }
   .menu-responsive-land .btn-wrap .btn-default{
     display: block;
-    width: 100%;
+    width: fit-content;
   }
   .menu-responsive-land .btn-wrap .btn-default:last-child{
     margin-top: 20px;
