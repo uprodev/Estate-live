@@ -1542,7 +1542,10 @@ header{
 
   .lading footer .footer-menu .menu li {
     margin-bottom: 16px; }
-
+  .menu-responsive-land .wrap{
+    width: 400px;
+    max-width: 100%;
+  }
   .lading .soc-mob {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
