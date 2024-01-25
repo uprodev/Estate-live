@@ -7,7 +7,9 @@
         if($object_terms){
             $parent_term_id = '';
             foreach ($object_terms as $object_term) {
-                if($object_term->parent == 0) $parent_term_id = $object_term->name;
+                foreach ($terms as $term) {
+                    if($object_term->parent == 0 && $object_term->term_id == $term->term_id) $parent_term_id = get_field('title_add', 'term_' . $term->term_id);
+                }
             }
         }
     }
