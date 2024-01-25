@@ -1000,6 +1000,13 @@ header{
   .menu-responsive-land .btn-wrap .nice-select{
     display: none;
   }
+  .menu-responsive-land .btn-wrap .btn-default{
+    display: block;
+    width: 100%;
+  }
+  .menu-responsive-land .btn-wrap .btn-default:last-child{
+    margin-top: 20px;
+  }
 
   .lading .open-menu-land {
     display: inline-block;
