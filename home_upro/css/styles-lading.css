@@ -989,10 +989,10 @@ header{
     display: none; }
 
   .lading .top-line-lading .btn-wrap {
-    /*display: none;*/ }
-  .lading .top-line-lading .btn-wrap .btn-default{
+    display: none; }
+ /* .lading .top-line-lading .btn-wrap .btn-default{
     display: none;
-  }
+  }*/
 
   .lading .open-menu-land {
     display: inline-block;
