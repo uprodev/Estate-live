@@ -989,6 +989,7 @@ header{
     display: none; }
 
   .lading .top-line-lading .btn-wrap {
+    justify-content: flex-end;
     /*display: none;*/ }
   .lading .top-line-lading .btn-wrap .btn-default{
     display: none;
