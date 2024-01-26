@@ -879,8 +879,9 @@ jQuery(document).ready(function($) {
 			},
 			success: function (data) {
 				if (data) {
-					/*let url = location.href.includes('?') ? location.href.split('?')[0] : location.href;
-					location.href = url + '?region_id=' + region_id;*/
+					let url = location.href.includes('?') ? location.href.split('?')[0] : location.href;
+					/*location.href = url + '?region_id=' + region_id;*/
+					history.pushState({}, "", url + '?region_id=' + region_id);
 					$('.home-block.home-block-default.bg-white .title h2 span').text(region_name);
 					$(".loading-dz").hide();
 					if($('#objects').length > 0) $('#objects').css('display', 'block');
