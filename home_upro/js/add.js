@@ -877,7 +877,7 @@ jQuery(document).ready(function($) {
 			},
 			success: function (data) {
 				if (data) {
-					let url = window.location.href.split('?')[0];
+					let url = location.href.includes('?') ? location.href.split('?')[0] : location.href;
 					location.href = url + '?region_id=' + data_.region_id;
 					$('.home-block.home-block-default.bg-white .title h2 span').text(region_name);
 					if($('.pagination-wrap').length > 0) $('.pagination-wrap').empty();
