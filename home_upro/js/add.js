@@ -835,7 +835,7 @@ jQuery(document).ready(function($) {
 
 
 	$(document).on('click', 'nav.top-menu-lading li.region, nav.mob-menu-land li.region', function(e){
-		
+
 		e.preventDefault();
 		
 		let _this = $(this);
@@ -872,8 +872,8 @@ jQuery(document).ready(function($) {
 			data: data_,
 			type: 'POST',
 			beforeSend: function(){
-				//$('#response_objects').addClass("loading");
 				$("#response_objects").empty();
+				$('#response_objects').addClass("loading");
 				$(".loading-dz").show();
 			},
 			success: function (data) {
