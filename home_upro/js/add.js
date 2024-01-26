@@ -835,7 +835,6 @@ jQuery(document).ready(function($) {
 
 
 	$(document).on('click', 'nav.top-menu-lading li.region, nav.mob-menu-land li.region', function(e){
-
 		e.preventDefault();
 		
 		let _this = $(this);
@@ -874,13 +873,11 @@ jQuery(document).ready(function($) {
 			beforeSend: function(){
 				if($('.pagination-wrap').length > 0) $('.pagination-wrap').empty();
 				$("#response_objects").empty();
-				//$('#response_objects').addClass("loading");
 				$(".loading-dz").show();
 			},
 			success: function (data) {
 				if (data) {
 					let url = location.href.includes('?') ? location.href.split('?')[0] : location.href;
-					/*location.href = url + '?region_id=' + region_id;*/
 					history.pushState({}, "", url + '?region_id=' + region_id);
 					$('.home-block.home-block-default.bg-white .title h2 span').text(region_name);
 					$(".loading-dz").hide();
