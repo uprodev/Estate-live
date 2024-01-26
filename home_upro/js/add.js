@@ -872,16 +872,16 @@ jQuery(document).ready(function($) {
 			data: data_,
 			type: 'POST',
 			beforeSend: function(){
+				if($('.pagination-wrap').length > 0) $('.pagination-wrap').empty();
 				$("#response_objects").empty();
 				//$('#response_objects').addClass("loading");
 				$(".loading-dz").show();
 			},
 			success: function (data) {
 				if (data) {
-					let url = location.href.includes('?') ? location.href.split('?')[0] : location.href;
-					location.href = url + '?region_id=' + data_.region_id;
+					/*let url = location.href.includes('?') ? location.href.split('?')[0] : location.href;
+					location.href = url + '?region_id=' + region_id;*/
 					$('.home-block.home-block-default.bg-white .title h2 span').text(region_name);
-					if($('.pagination-wrap').length > 0) $('.pagination-wrap').empty();
 					$(".loading-dz").hide();
 					if($('#objects').length > 0) $('#objects').css('display', 'block');
 					$("#response_objects").html(data);
