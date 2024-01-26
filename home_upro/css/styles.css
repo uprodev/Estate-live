@@ -3739,8 +3739,17 @@ header .nice-select .list li a:after {
     .top-menu-lading{
         justify-content: flex-end;
     }
-    .top-line .btn-wrap {
-        display: none; }
+
+
+    .top-line.btn-wrap {
+        justify-content: flex-end;
+        /*display: none;*/ }
+    .top-line .btn-wrap .btn-default{
+        display: none;
+    }
+    .top-line .lang-wrap{
+        display: none;
+    }
 
     header .open-menu-land {
         display: inline-block;
