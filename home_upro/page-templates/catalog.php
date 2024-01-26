@@ -35,8 +35,8 @@ $wp_query = new WP_Query(array(
 		<h2><?= $_GET['object_added'] ? "Об'єкт " . get_the_title((int)$_GET['object_added']) . " додано" : "Об'єкт " . get_the_title((int)$_GET['object_edited']) . " відредаговано" ?></h2>
 	<?php endif ?>
 
+	<div class="loading-dz"></div>
 	<div class="content" id="response_objects">
-		<div class="loading-dz"></div>
 
 		<?php if($wp_query->have_posts()): 
 			?>

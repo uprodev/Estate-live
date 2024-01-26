@@ -873,7 +873,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			beforeSend: function(){
 				$("#response_objects").empty();
-				$('#response_objects').addClass("loading");
+				//$('#response_objects').addClass("loading");
 				$(".loading-dz").show();
 			},
 			success: function (data) {
