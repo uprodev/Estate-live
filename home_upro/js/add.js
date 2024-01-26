@@ -843,12 +843,12 @@ jQuery(document).ready(function($) {
 
 		if($('.to_catalog, li.li_to_catalog a').length > 0) $('.to_catalog, li.li_to_catalog a').attr('href', '/catalog/?region_id=' + region_id);
 
-		let data = {
+		let data_ = {
 			'action': 'select_region',
 			'region_id': region_id,
 		}
 
-		switch (data.region_id) {
+		switch (data_.region_id) {
 		case '166':
 			region_name = 'Києві';
 			break;
@@ -868,16 +868,17 @@ jQuery(document).ready(function($) {
 
 		$.ajax({
 			url: "/wp-admin/admin-ajax.php",
-			data: data,
+			data: data_,
 			type: 'POST',
 			beforeSend: function(){
 				//$('#response_objects').addClass("loading");
+				$("#response_objects").empty();
 				$(".loading-dz").show();
 			},
 			success: function (data) {
 				if (data) {
 					let url = window.location.href.split('?')[0];
-					location.href = url + '?region_id=' + data.region_id;
+					location.href = url + '?region_id=' + data_.region_id;
 					$('.home-block.home-block-default.bg-white .title h2 span').text(region_name);
 					if($('.pagination-wrap').length > 0) $('.pagination-wrap').empty();
 					$(".loading-dz").hide();
