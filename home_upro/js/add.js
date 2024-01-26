@@ -870,10 +870,17 @@ jQuery(document).ready(function($) {
 			url: "/wp-admin/admin-ajax.php",
 			data: data,
 			type: 'POST',
+			beforeSend: function(){
+				container.addClass("loading");
+				$(".loading-dz").show();
+			},
 			success: function (data) {
 				if (data) {
+					let url = window.location.href.split('?')[0];
+					location.href = url + '?region_id=' + data.region_id;
 					$('.home-block.home-block-default.bg-white .title h2 span').text(region_name);
 					if($('.pagination-wrap').length > 0) $('.pagination-wrap').empty();
+					$(".loading-dz").hide();
 					if($('#objects').length > 0) $('#objects').css('display', 'block');
 					$("#response_objects").html(data);
 					$('.item-home .text-info').Cuttr({
