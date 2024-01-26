@@ -835,6 +835,7 @@ jQuery(document).ready(function($) {
 
 
 	$(document).on('click', 'nav.top-menu-lading li.region, nav.mob-menu-land li.region', function(e){
+		
 		e.preventDefault();
 		
 		let _this = $(this);
