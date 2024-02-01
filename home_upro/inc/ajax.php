@@ -39,6 +39,7 @@ function filter_objects(){
 	$args = array(
 		'post_type' => 'objects',
 		'posts_per_page' => -1,
+		'post_status' => 'publish',
             //'suppress_filters' => true,
 	);
 
