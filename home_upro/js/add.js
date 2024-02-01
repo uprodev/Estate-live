@@ -216,8 +216,12 @@ jQuery(document).ready(function($) {
 			url: "/wp-admin/admin-ajax.php",
 			data: filter.serialize(),
 			type: filter.attr("method"),
-			beforeSend: function (xhr) {},
+			beforeSend: function(){
+				$("#response_objects").empty();
+				$(".loading-dz").show();
+			},
 			success: function (data) {
+				$(".loading-dz").hide();
 				$("#response_objects").html(data);
 				$('.pagination-wrap').hide();
 				$('.item-home .text-info').Cuttr({
