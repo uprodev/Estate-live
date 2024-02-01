@@ -217,6 +217,7 @@ jQuery(document).ready(function($) {
 			data: filter.serialize(),
 			type: filter.attr("method"),
 			beforeSend: function(){
+				if($('.pagination-wrap').length > 0) $('.pagination-wrap').empty();
 				$("#response_objects").empty();
 				$(".loading-dz").show();
 			},
