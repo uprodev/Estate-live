@@ -3,6 +3,7 @@
 <?php
 $object_type = wp_get_object_terms(get_the_ID(), 'object_type')[0];
 $is_sold = wp_get_object_terms(get_the_ID(), 'sold') ?: '';
+$url_region_id = isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '';
 ?>
 
 <section class="home-block inner-home-block">
@@ -43,7 +44,7 @@ $is_sold = wp_get_object_terms(get_the_ID(), 'sold') ?: '';
                             <?php if ($terms): ?>
                                 <?php foreach ($terms as $term): ?>
                                     <li>
-                                        <a href="<?= get_term_link($term->term_id) . isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '' ?>"><?= $term->name ?></a>
+                                        <a href="<?= get_term_link($term->term_id)/* . $url_region_id*/ ?>"><?= $term->name ?></a>
                                     </li>
                                 <?php endforeach ?>
                             <?php endif ?>
