@@ -3,7 +3,10 @@
 <div class="item-home">
 	<figure>
 
-		<?php $author_id = $post->post_author ?>
+		<?php 
+		$author_id = $post->post_author;
+		$url_region_id = isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : ''; 
+		?>
 
 		<?php if (is_user_logged_in() && $author_id): ?>
 			<div class="author">
@@ -22,7 +25,7 @@
 			</div>
 		<?php endif ?>
 
-		<a href="<?= get_permalink() . isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '' ?>">
+		<a href="<?= get_permalink() . $url_region_id ?>">
 			<?php if (has_post_thumbnail()): ?>
 				<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'full') ?>" alt="">
 			<?php else: ?>
@@ -36,7 +39,6 @@
 
 			<?php if ($terms): ?>
 				<?php foreach ($terms as $term): ?>
-					<?php $url_region_id = isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '' ?>
 					<li>
 						<a href="<?= get_term_link($term->term_id) . $url_region_id ?>"><?= $term->name ?></a>
 					</li>
