@@ -53,7 +53,16 @@
 				</li>
 			<?php endif ?>
 
-			
+			<?php
+			/*$terms = wp_get_object_terms(get_the_ID(), 'builder');*/
+			$builder_id = get_field('builder');
+			?>
+
+			<?php if ($builder_id): ?>
+				<li class="bg-black">
+					<a href="<?= get_permalink(apply_filters('wpml_object_id', 6645, 'page')) . '?builder_id=' . $builder_id ?>"><?= get_the_title($builder_id) ?></a>
+				</li>
+			<?php endif ?>
 
 		</ul>
 	</figure>

@@ -40,7 +40,7 @@ $wp_query = new WP_Query(array(
 
 		<?php if($wp_query->have_posts()): 
 			?>
-
+123
 			<?php $current_user_id = get_current_user_id() ?>
 
 			<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
