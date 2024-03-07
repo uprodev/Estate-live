@@ -1,4 +1,4 @@
-123<?php $object_type = wp_get_object_terms(get_the_ID(), 'object_type')[0] ?>
+<?php $object_type = wp_get_object_terms(get_the_ID(), 'object_type')[0] ?>
 
 <div class="item-home">
 	<figure>
