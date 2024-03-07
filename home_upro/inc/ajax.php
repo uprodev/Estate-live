@@ -240,7 +240,9 @@ function filter_objects(){
 	if( $query->have_posts() ) :
 		while($query->have_posts() ): $query->the_post() ?>
 
-			<?php get_template_part('parts/content', 'objects') ?>
+			<?php $current_user_id = get_current_user_id() ?>
+
+			<?php get_template_part('parts/content', 'objects', ['object_id' => get_the_ID(), 'current_user_id' => $current_user_id]) ?>
 
 		<?php endwhile;
 		wp_reset_postdata();
