@@ -18,8 +18,8 @@ Template Name: Objects by builder
 		'posts_per_page' => 8, 	
 		'meta_query' => [
 			[
-				'meta_key'     => 'builder',
-				'meta_value_num'   => (int)$_GET['builder_id'],
+				'key'     => 'builder',
+				'value'   => $_GET['builder_id'],
 			]
 		], 
 		'paged' => $paged)); ?>
