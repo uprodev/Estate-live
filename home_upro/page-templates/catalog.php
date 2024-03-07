@@ -44,7 +44,7 @@ $wp_query = new WP_Query(array(
 
 			<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
 
-				
+				<?php get_template_part('parts/content', 'objects', ['object_id' => get_the_ID(), 'current_user_id' => $current_user_id]) ?>
 
 			<?php endwhile; ?>
 
