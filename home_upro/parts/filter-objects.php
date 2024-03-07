@@ -147,8 +147,8 @@
             <input type="checkbox" name="unit_plot_area" id="unit_plot_area">
             <label for="unit_plot_area"><?php _e('га', 'Home') ?></label>
           </div>
-          <input type="text" name="plot_area_min" id="plot_area_min" value="" placeholder="від">
-          <input type="text" name="plot_area_max" id="plot_area_max" value="" placeholder="до">
+          <input type="number" name="plot_area_min" id="plot_area_min" value="" placeholder="від">
+          <input type="number" name="plot_area_max" id="plot_area_max" value="" placeholder="до">
         </div>
 
         <div class="input-wrap input-wrap-number input-wrap-var-1 input-wrap-var-2 input-wrap-var-3 input-wrap-var-4">
