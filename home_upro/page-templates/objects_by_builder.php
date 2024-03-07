@@ -6,7 +6,7 @@ Template Name: Objects by builder
 
 <?php get_header(); ?>
 
-<?php if ($_GET['builder_id']): ?>
+<?php if ($_GET['builder_id'] || $_GET['complex_id']): ?>
 	
 	<?php 
 	global $query_string;
@@ -18,8 +18,8 @@ Template Name: Objects by builder
 		'posts_per_page' => 8, 	
 		'meta_query' => [
 			[
-				'key'     => 'builder',
-				'value'   => $_GET['builder_id'],
+				'key'     => $_GET['builder_id'] ? 'builder' : 'complex',
+				'value'   => $_GET['builder_id'] ?: $_GET['complex_id'],
 			]
 		], 
 		'paged' => $paged)); ?>
