@@ -25,7 +25,7 @@
 			</div>
 		<?php endif ?>
 
-		<a href="<?= get_permalink() . $url_region_id ?>">
+		<a href="<?= get_permalink()/* . $url_region_id*/ ?>">
 			<?php if (has_post_thumbnail()): ?>
 				<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'full') ?>" alt="">
 			<?php else: ?>
