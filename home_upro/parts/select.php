@@ -8,7 +8,7 @@
             $parent_term_id = '';
             foreach ($object_terms as $object_term) {
                 foreach ($terms as $term) {
-                    if($object_term->parent == 0 && $object_term->term_id == $term->term_id) $parent_term_id = get_field('title_add', 'term_' . $term->term_id);
+                    if(($object_term->parent == 0 || $object_term->term_id == 166) && $object_term->term_id == $term->term_id) $parent_term_id = get_field('title_add', 'term_' . $term->term_id);
                 }
             }
         }
