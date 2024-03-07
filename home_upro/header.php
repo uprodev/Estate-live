@@ -88,7 +88,7 @@
 
 <main>
 
-    <?php if (is_page_template('page-templates/catalog.php') || is_search() || is_tax()): ?>
+    <?php if (is_page_template('page-templates/catalog.php') || is_search() || is_tax() || is_page_template('page-templates/objects_by_builder.php') || is_page_template('page-templates/objects_by_complex.php')): ?>
 
     <?php
     /*$section_class = '';
