@@ -36,8 +36,9 @@
 
 			<?php if ($terms): ?>
 				<?php foreach ($terms as $term): ?>
+					<?php $url_region_id = isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '' ?>
 					<li>
-						<a href="<?= get_term_link($term->term_id) . isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '' ?>"><?= $term->name ?></a>
+						<a href="<?= get_term_link($term->term_id) . $url_region_id ?>"><?= $term->name ?></a>
 					</li>
 				<?php endforeach ?>
 			<?php endif ?>
