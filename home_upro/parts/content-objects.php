@@ -44,12 +44,12 @@
 
 			<?php
 			/*$terms = wp_get_object_terms(get_the_ID(), 'residential_complex');*/
-			$complex = get_field('complex');
+			$complex_id = get_field('complex');
 			?>
 
-			<?php if ($complex): ?>
+			<?php if ($complex_id): ?>
 				<li>
-					<a href="<?php /*echo get_term_link($term->term_id)*/ ?>"><?= $complex->post_title ?></a>
+					<a href="<?= get_permalink(apply_filters('wpml_object_id', 6647, 'page')) . '?complex_id=' . $complex_id ?>"><?= get_the_title($complex_id) ?></a>
 				</li>
 			<?php endif ?>
 
