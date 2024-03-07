@@ -22,7 +22,7 @@
 			</div>
 		<?php endif ?>
 
-		<a href="<?php the_permalink() ?>">
+		<a href="<?= get_permalink() . isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '' ?>">
 			<?php if (has_post_thumbnail()): ?>
 				<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'full') ?>" alt="">
 			<?php else: ?>
@@ -37,7 +37,7 @@
 			<?php if ($terms): ?>
 				<?php foreach ($terms as $term): ?>
 					<li>
-						<a href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
+						<a href="<?= get_term_link($term->term_id) . isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '' ?>"><?= $term->name ?></a>
 					</li>
 				<?php endforeach ?>
 			<?php endif ?>

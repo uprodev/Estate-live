@@ -8,7 +8,34 @@ $paged = ( isset( $my_query_array['paged'] ) && !empty( $my_query_array['paged']
 $queried_object = get_queried_object();
 $this_tax = get_taxonomy($queried_object->taxonomy);
 
-$wp_query = new WP_Query(array('post_type' => 'objects', 'posts_per_page' => 8, 'tax_query' => array('relation' => 'AND', array('taxonomy' => 'sold', 'field' => 'id', 'terms' => 73, 'operator' => 'NOT IN'), array('taxonomy' => $this_tax->name, 'field' => 'id', 'terms' => get_queried_object_id())), 'paged' => $paged));
+$region_id = $_GET['region_id'] ? 
+array(
+	'taxonomy' => 'city', 
+	'field' => 'id', 
+	'terms' => (int)$_GET['region_id'],
+) :
+'';
+
+$args = array(
+	'post_type' => 'objects', 
+	'posts_per_page' => 8, 
+	'tax_query' => array(
+		'relation' => 'AND', 
+		array('taxonomy' => 'sold', 
+			'field' => 'id', 
+			'terms' => 73, 
+			'operator' => 'NOT IN'), 
+		array(
+			'taxonomy' => $this_tax->name, 
+			'field' => 'id', 
+			'terms' => get_queried_object_id(),
+		),
+		$region_id,
+	), 
+	'paged' => $paged
+);
+
+$wp_query = new WP_Query($args);
 if($wp_query->have_posts()): 
 	?>
 
