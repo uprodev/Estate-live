@@ -48,11 +48,13 @@ $is_sold = wp_get_object_terms(get_the_ID(), 'sold') ?: '';
                                 <?php endforeach ?>
                             <?php endif ?>
 
+                            <?php $page_id = apply_filters('wpml_object_id', 6645, 'page') ?>
+
                             <?php $complex_id = get_field('complex') ?>
 
                             <?php if ($complex_id): ?>
                                 <li>
-                                    <a href="<?= get_permalink(apply_filters('wpml_object_id', 6647, 'page')) . '?complex_id=' . $complex_id ?>"><?= get_the_title($complex_id) ?></a>
+                                    <a href="<?= get_permalink($page_id) . '?complex_id=' . $complex_id ?>"><?= get_the_title($complex_id) ?></a>
                                 </li>
                             <?php endif ?>
 
@@ -60,7 +62,7 @@ $is_sold = wp_get_object_terms(get_the_ID(), 'sold') ?: '';
 
                             <?php if ($builder_id): ?>
                                 <li class="bg-black">
-                                    <a href="<?= get_permalink(apply_filters('wpml_object_id', 6645, 'page')) . '?builder_id=' . $builder_id ?>"><?= get_the_title($builder_id) ?></a>
+                                    <a href="<?= get_permalink($page_id) . '?builder_id=' . $builder_id ?>"><?= get_the_title($builder_id) ?></a>
                                 </li>
                             <?php endif ?>
 
