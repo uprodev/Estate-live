@@ -4,6 +4,7 @@
 $object_type = wp_get_object_terms(get_the_ID(), 'object_type')[0];
 $is_sold = wp_get_object_terms(get_the_ID(), 'sold') ?: '';
 $url_region_id = isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '';
+$and_url_region_id = isset($_GET['region_id']) ? '&region_id=' . $_GET['region_id'] : '';
 ?>
 
 <section class="home-block inner-home-block">
@@ -55,7 +56,7 @@ $url_region_id = isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] 
 
                             <?php if ($complex_id): ?>
                                 <li>
-                                    <a href="<?= get_permalink($page_id) . '?complex_id=' . $complex_id ?>"><?= get_the_title($complex_id) ?></a>
+                                    <a href="<?= get_permalink($page_id) . '?complex_id=' . $complex_id . $and_url_region_id ?>"><?= get_the_title($complex_id) ?></a>
                                 </li>
                             <?php endif ?>
 
@@ -63,7 +64,7 @@ $url_region_id = isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] 
 
                             <?php if ($builder_id): ?>
                                 <li class="bg-black">
-                                    <a href="<?= get_permalink($page_id) . '?builder_id=' . $builder_id ?>"><?= get_the_title($builder_id) ?></a>
+                                    <a href="<?= get_permalink($page_id) . '?builder_id=' . $builder_id . $and_url_region_id ?>"><?= get_the_title($builder_id) ?></a>
                                 </li>
                             <?php endif ?>
 

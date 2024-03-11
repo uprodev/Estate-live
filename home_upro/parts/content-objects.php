@@ -5,7 +5,8 @@
 
 		<?php 
 		$author_id = $post->post_author;
-		$url_region_id = isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : ''; 
+		$url_region_id = isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '';
+		$and_url_region_id = isset($_GET['region_id']) ? '&region_id=' . $_GET['region_id'] : '';
 		?>
 
 		<?php if (is_user_logged_in() && $author_id): ?>
@@ -54,7 +55,7 @@
 
 			<?php if ($complex_id): ?>
 				<li>
-					<a href="<?= get_permalink($page_id) . '?complex_id=' . $complex_id ?>"><?= get_the_title($complex_id) ?></a>
+					<a href="<?= get_permalink($page_id) . '?complex_id=' . $complex_id . $and_url_region_id ?>"><?= get_the_title($complex_id) ?></a>
 				</li>
 			<?php endif ?>
 
@@ -65,7 +66,7 @@
 
 			<?php if ($builder_id): ?>
 				<li class="bg-black">
-					<a href="<?= get_permalink($page_id) . '?builder_id=' . $builder_id ?>"><?= get_the_title($builder_id) ?></a>
+					<a href="<?= get_permalink($page_id) . '?builder_id=' . $builder_id . $and_url_region_id ?>"><?= get_the_title($builder_id) ?></a>
 				</li>
 			<?php endif ?>
 
