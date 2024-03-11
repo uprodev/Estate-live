@@ -189,7 +189,7 @@
 
 			<?php foreach ($terms as $term): ?>
 				<li>
-					<a href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a>
+					<a href="<?= get_term_link($term->term_id) . $url_region_id ?>"><?= $term->name ?></a>
 				</li>
 			<?php endforeach ?>
 
