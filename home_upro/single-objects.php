@@ -3,8 +3,21 @@
 <?php
 $object_type = wp_get_object_terms(get_the_ID(), 'object_type')[0];
 $is_sold = wp_get_object_terms(get_the_ID(), 'sold') ?: '';
-$url_region_id = isset($_GET['region_id']) ? '?region_id=' . $_GET['region_id'] : '';
-$and_url_region_id = isset($_GET['region_id']) ? '&region_id=' . $_GET['region_id'] : '';
+
+$region_id = '';
+
+if (!is_user_logged_in() && !isset($_GET['region_id'])) {
+    $regions = wp_get_object_terms(get_the_ID(), 'city');
+    if ($regions) {
+        foreach ($regions as $region) {
+            if($region->parent == 0) $region_id = $region->term_id;
+        }
+    }
+}
+elseif(isset($_GET['region_id'])) $region_id = $_GET['region_id'];
+
+$url_region_id = $region_id ? '?region_id=' . $region_id : '';
+$and_url_region_id = $region_id ? '&region_id=' . $region_id : '';
 ?>
 
 <section class="home-block inner-home-block">
