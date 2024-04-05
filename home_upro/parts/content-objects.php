@@ -40,11 +40,7 @@
 		<?php endif ?>
 
 		<a href="<?= get_permalink() . $url_region_id ?>">
-			<?php if (has_post_thumbnail()): ?>
-				<img src="<?= get_the_post_thumbnail_url(get_the_ID(), 'full') ?>" alt="">
-			<?php else: ?>
-				<img src="<?= get_stylesheet_directory_uri() ?>/img/icon-10.svg" alt="">
-			<?php endif ?>
+			<img src="<?= has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : (get_field('gallery', get_the_ID()) ? get_field('gallery', get_the_ID())[0]['url'] : get_stylesheet_directory_uri() . '/img/icon-10.svg') ?>" alt="">
 		</a>
 
 		<ul class="tag">
