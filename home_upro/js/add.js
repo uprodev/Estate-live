@@ -268,6 +268,7 @@ jQuery(document).ready(function($) {
 						title: "Збережено",
 						showConfirmButton: false,
 					});
+					$('button[type="submit"]').attr('disabled','disabled');
 					setTimeout(go_to_object, 2000);
 				} else {
 					/*$('.input-submit.flex').before("<p class='info-show'>Потрібно додати не менше 5 зображень!</p>");*/
