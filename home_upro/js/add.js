@@ -259,6 +259,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			success: function (data) {
 				if (data) {
+					$('button').attr('disabled','disabled');
 					function go_to_object(){
 						window.location.href = data
 					}
@@ -268,7 +269,6 @@ jQuery(document).ready(function($) {
 						title: "Збережено",
 						showConfirmButton: false,
 					});
-					$('button[type="submit"]').attr('disabled','disabled');
 					setTimeout(go_to_object, 2000);
 				} else {
 					/*$('.input-submit.flex').before("<p class='info-show'>Потрібно додати не менше 5 зображень!</p>");*/
@@ -277,6 +277,7 @@ jQuery(document).ready(function($) {
 						title: "Oops...",
 						text: "Потрібно додати не менше 5 зображень!",
 					});
+					$('button').removeAttr('disabled');
 				}
 			},
 		});
@@ -703,7 +704,7 @@ jQuery(document).ready(function($) {
 					dataType: 'json',
 					success: function (data) {
 						if (data) {
-							console.log(data)
+							/*console.log(data)*/
 
 							$('.result-login').html(data.status)
 
@@ -753,7 +754,7 @@ jQuery(document).ready(function($) {
 						var id = childDropzoneArr[l];
 						$(this).find('a').attr('data-id', id);
 						$('.input-submit button').prop('disabled', false)
-						console.log(id)
+						/*console.log(id)*/
 					})
 					$('[name="images"]').val(childDropzoneArr.join(','));
 
@@ -776,8 +777,8 @@ jQuery(document).ready(function($) {
 	$(document).on('click', '.dz-image-preview a', function(e){
 		e.preventDefault()
 		var id = $(this).attr('data-id');
-		console.log(id)
-		console.log(childDropzoneArr)
+		/*console.log(id)
+		console.log(childDropzoneArr)*/
 		var index = childDropzoneArr.indexOf(id);
 		if (index > -1) { // only splice array when item is found
 			childDropzoneArr.splice(index, 1); // 2nd parameter means remove one item only
@@ -811,7 +812,7 @@ jQuery(document).ready(function($) {
 			dataType: 'json',
 			success: function (data) {
 				if (data) {
-					console.log(data)
+					/*console.log(data)*/
 
 				}
 			}
@@ -833,7 +834,7 @@ jQuery(document).ready(function($) {
 				var id = $(this).find('a').attr('data-id');
 				childDropzoneArr.push(id);
 			})
-			console.log(childDropzoneArr)
+			/*console.log(childDropzoneArr)*/
 			$('[name="images"]').val(childDropzoneArr.join(','));
 
 		}
