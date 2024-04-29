@@ -608,6 +608,8 @@ function get_builders() {
 		] );
 		echo json_encode($builders);
 	}
+	
+	die();
 
 }
 

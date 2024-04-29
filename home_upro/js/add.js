@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			success: function (data) {
 				if (data) {
-					let builders = JSON.parse(data.slice(0, -1));
+					let builders = JSON.parse(data);
 					$('ul#get_builders').empty();
 					$('ul#get_builders').append('<li class="option"><label for="builder-0"></label><input type="radio" id="builder-0" name="meta_builder" value="">Всі</li>');
 					let counter = 0;
