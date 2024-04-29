@@ -15,5 +15,5 @@ jobs:
           username: wp@homedev.com.ua
           password: ${{ secrets.pswd }}
           protocol: ftps
-          server-dir: /wp-content/themes/
+          server-dir: /public_html/wp-content/themes/
 
