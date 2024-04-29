@@ -261,7 +261,7 @@
             <p class="label-info"><?php _e('Забудовник', 'Home') ?></p>
             <div class="nice-select">
               <span class="current"><?php _e('Оберіть забудовника', 'Home') ?></span>
-              <div class="list">123
+              <div class="list">
                 <ul class="new" id="get_builders">
                   <li class="option selected focus">
                     <label for="builder-0"></label>
