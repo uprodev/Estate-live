@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
 				if (data) {
 					let builders = JSON.parse(data.slice(0, -1));
 					$('ul#get_builders').empty();
-					$('ul#get_builders').append('<li class="option"><label for="builder-0"></label><input type="radio" id="builder-0" name="builder" value="">Всі</li>');
+					$('ul#get_builders').append('<li class="option"><label for="builder-0"></label><input type="radio" id="builder-0" name="meta_builder" value="">Всі</li>');
 					let counter = 0;
 					$.each(builders, function(index, value){
 						$('ul#get_builders').append(`<li class="option"><label for="builder-${index + 1}"></label><input type="radio" name="meta_builder" id="builder-${index + 1}" value="${value.ID}">${value.post_title}</li>`);
