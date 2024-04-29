@@ -34,10 +34,10 @@ jQuery(document).ready(function($) {
 					let builders = JSON.parse(data);
 					$('ul#get_builders').empty();
 					$('ul#get_builders').append('<li class="option"><label for="builder-0"></label><input type="radio" id="builder-0" name="meta_builder" value="">Всі</li>');
-					let counter = 0;
+					$('ul#get_complexes').empty();
+					$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі</li>');
 					$.each(builders, function(index, value){
 						$('ul#get_builders').append(`<li class="option"><label for="builder-${index + 1}"></label><input type="radio" name="meta_builder" id="builder-${index + 1}" value="${value.ID}">${value.post_title}</li>`);
-						counter++;
 					});
 				} else {
 					console.log('Error!');
@@ -65,10 +65,8 @@ jQuery(document).ready(function($) {
 					let complexes = JSON.parse(data);
 					$('ul#get_complexes').empty();
 					$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі</li>');
-					let counter = 0;
 					$.each(complexes, function(index, value){
 						$('ul#get_complexes').append(`<li class="option"><label for="complex-${index + 1}"></label><input type="radio" name="meta_complex" id="complex-${index + 1}" value="${value.ID}">${value.post_title}</li>`);
-						counter++;
 					});
 				} else {
 					console.log('Error!');
