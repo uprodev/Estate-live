@@ -12,8 +12,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: homedev.com.ua
-          username: homed
+          username: wp@homedev.com.ua
           password: ${{ secrets.pswd }}
           protocol: ftps
-          server-dir: /web/homedev.com.ua/public_html/wp-content/themes/
+          server-dir: /wp-content/themes/
 
