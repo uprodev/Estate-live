@@ -62,8 +62,9 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			success: function (data) {
 				if (data) {
-					let complexes = JSON.parse(data.slice(0, -1));
+					let complexes = JSON.parse(data);
 					$('ul#get_complexes').empty();
+					$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі</li>');
 					let counter = 0;
 					$.each(complexes, function(index, value){
 						$('ul#get_complexes').append(`<li class="option"><label for="complex-${index + 1}"></label><input type="radio" name="meta_complex" id="complex-${index + 1}" value="${value.ID}">${value.post_title}</li>`);
@@ -92,7 +93,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			success: function (data) {
 				if (data) {
-					let turns = JSON.parse(data.slice(0, -1));
+					let turns = JSON.parse(data);
 					$('ul#get_turns').empty();
 					let counter = 0;
 					$.each(turns, function(index, value){
@@ -122,7 +123,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			success: function (data) {
 				if (data) {
-					let sections = JSON.parse(data.slice(0, -1));
+					let sections = JSON.parse(data);
 					$('ul#get_sections').empty();
 					let counter = 0;
 					$.each(sections, function(index, value){
@@ -153,7 +154,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			success: function (data) {
 				if (data) {
-					let cities = JSON.parse(data.slice(0, -1));
+					let cities = JSON.parse(data);
 					cities = cities.map(function (city) {
 						return city.name
 					})
@@ -183,7 +184,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			success: function (data) {
 				if (data) {
-					let cities = JSON.parse(data.slice(0, -1));
+					let cities = JSON.parse(data);
 					/*cities = cities.map(function (city) {
 						return city.name
 					})*/

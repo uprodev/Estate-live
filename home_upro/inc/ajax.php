@@ -572,9 +572,12 @@ function cities_from_db() {
 		$cities = $wpdb->get_results("SELECT cities.id id, cities.name name, cities.level2_id district_id, districts.name district_name FROM level3 cities LEFT JOIN level2 districts ON cities.level2_id = districts.id WHERE cities.level1_id = $region_id");
 		
 		foreach ($cities as $key => $city) if ($city->district_name) $city->name = $city->name . ' (' . mb_strtoupper($city->district_name) . ')';
+		
+		echo json_encode($cities);
 	}
 
-	echo json_encode($cities);
+	
+	die();
 }
 
 
@@ -587,6 +590,8 @@ function cities_for_filter() {
 		] );
 		echo json_encode($cities);
 	}
+	
+	die();
 
 }
 
@@ -608,7 +613,7 @@ function get_builders() {
 		] );
 		echo json_encode($builders);
 	}
-	
+
 	die();
 
 }
@@ -624,6 +629,8 @@ function get_complexes() {
 		] );
 		echo json_encode($complexes);
 	}
+	
+	die();
 
 }
 
@@ -644,6 +651,8 @@ function get_turns() {
 
 		echo json_encode($complex_turns);
 	}
+	
+	die();
 
 }
 
@@ -664,6 +673,8 @@ function get_sections() {
 
 		echo json_encode($complex_sections);
 	}
+	
+	die();
 
 }
 
