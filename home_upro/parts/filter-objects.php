@@ -20,7 +20,7 @@
                 <ul class="new">
                   <li class="option selected focus">
                     <label for="region-0"></label>
-                    <input type="radio" id="region-0" name="region" value="" checked>
+                    <input type="radio" id="region-0" name="region_filter" value="" checked>
                     <?php _e('Всі', 'Home') ?>
                   </li>
 
