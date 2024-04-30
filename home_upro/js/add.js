@@ -53,10 +53,6 @@ jQuery(document).ready(function($) {
 					empty_complexes();
 				}
 			},
-			beforeSend: function (data) {
-				empty_builders();
-				empty_complexes();
-			},
 		});
 
 		return false;
