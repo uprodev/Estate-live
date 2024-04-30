@@ -257,7 +257,7 @@
         ?>
 
         <?php if ($terms): ?>
-          <div class="input-wrap input-wrap-popup input-wrap-var-1 input-wrap-var-4">
+          <div class="input-wrap input-wrap-popup input-wrap-var-1 input-wrap-var-4" id="get_builders_wrap">
             <p class="label-info"><?php _e('Забудовник', 'Home') ?></p>
             <div class="nice-select">
               <span class="current"><?php _e('Оберіть забудовника', 'Home') ?></span>
@@ -291,7 +291,7 @@
         ?>
 
         <?php if ($terms): ?>
-          <div class="input-wrap input-wrap-popup input-wrap-var-1">
+          <div class="input-wrap input-wrap-popup input-wrap-var-1" id="get_complexes_wrap">
             <p class="label-info"><?php _e('Житловий комплекс', 'Home') ?></p>
             <div class="nice-select">
               <span class="current"><?php _e('Оберіть ЖК', 'Home') ?></span>

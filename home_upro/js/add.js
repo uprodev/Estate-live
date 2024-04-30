@@ -2,6 +2,17 @@ var DZ
 var  childDropzoneArr = [];
 jQuery(document).ready(function($) {
 
+	function empty_builders(){
+		$('ul#get_builders').empty();
+		$('ul#get_builders').append('<li class="option"><label for="builder-0"></label><input type="radio" id="builder-0" name="meta_builder" value="">Всі</li>');
+		$('#get_builders_wrap span.current').text('Всі');
+	}
+	function empty_complexes(){
+		$('ul#get_complexes').empty();
+		$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі</li>');
+		$('#get_complexes_wrap span.current').text('Всі');
+	}
+
 	$(document).on('change', 'input[name="tax_city"], input[name="city"]', function(){
 		const this_ = $(this);
 		$('ul#districts').empty();
@@ -32,18 +43,14 @@ jQuery(document).ready(function($) {
 			success: function (data) {
 				if (data) {
 					let builders = JSON.parse(data);
-					$('ul#get_builders').empty();
-					$('ul#get_builders').append('<li class="option"><label for="builder-0"></label><input type="radio" id="builder-0" name="meta_builder" value="">Всі</li>');
-					$('ul#get_complexes').empty();
-					$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі</li>');
+					empty_builders();
+					empty_complexes();
 					$.each(builders, function(index, value){
 						$('ul#get_builders').append(`<li class="option"><label for="builder-${index + 1}"></label><input type="radio" name="meta_builder" id="builder-${index + 1}" value="${value.ID}">${value.post_title}</li>`);
 					});
 				} else {
-					$('ul#get_builders').empty();
-					$('ul#get_builders').append('<li class="option"><label for="builder-0"></label><input type="radio" id="builder-0" name="meta_builder" value="">Всі</li>');
-					$('ul#get_complexes').empty();
-					$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі</li>');
+					empty_builders();
+					empty_complexes();
 				}
 			},
 		});
@@ -66,14 +73,12 @@ jQuery(document).ready(function($) {
 			success: function (data) {
 				if (data) {
 					let complexes = JSON.parse(data);
-					$('ul#get_complexes').empty();
-					$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі</li>');
+					empty_complexes();
 					$.each(complexes, function(index, value){
 						$('ul#get_complexes').append(`<li class="option"><label for="complex-${index + 1}"></label><input type="radio" name="meta_complex" id="complex-${index + 1}" value="${value.ID}">${value.post_title}</li>`);
 					});
 				} else {
-					$('ul#get_complexes').empty();
-					$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі</li>');
+					empty_complexes();
 				}
 			},
 		});
