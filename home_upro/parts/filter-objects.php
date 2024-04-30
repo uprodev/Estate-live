@@ -266,7 +266,7 @@
                   <li class="option selected focus">
                     <label for="builder-0"></label>
                     <input type="radio" id="builder-0" name="builder" value="" checked>
-                    <?php _e('Всі', 'Home') ?>
+                    <?php _e('Всі забудовники', 'Home') ?>
                   </li>
 
                   <?php foreach ($terms as $index => $term): ?>
@@ -300,7 +300,7 @@
                   <li class="option selected focus">
                     <label for="residential_complex-0"></label>
                     <input type="radio" id="residential_complex-0" name="residential_complex" value="" checked>
-                    <?php _e('Всі', 'Home') ?>
+                    <?php _e('Всі житловы комплекси', 'Home') ?>
                   </li>
 
                   <?php foreach ($terms as $index => $term): ?>

@@ -4,12 +4,12 @@ jQuery(document).ready(function($) {
 
 	function empty_builders(){
 		$('ul#get_builders').empty();
-		$('ul#get_builders').append('<li class="option"><label for="builder-0"></label><input type="radio" id="builder-0" name="meta_builder" value="">Всі</li>');
+		$('ul#get_builders').append('<li class="option"><label for="builder-0"></label><input type="radio" id="builder-0" name="meta_builder" value="">Всі забудовники</li>');
 		$('#get_builders_wrap span.current').text('Оберіть забудовника');
 	}
 	function empty_complexes(){
 		$('ul#get_complexes').empty();
-		$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі</li>');
+		$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі житловы комплекси</li>');
 		$('#get_complexes_wrap span.current').text('Оберіть ЖК');
 	}
 
