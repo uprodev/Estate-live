@@ -1,9 +1,9 @@
 <?php 
-$region = ($_GET['region_filter']) ?
+$region = ($_GET['region_filter'] || $_GET['region_id']) ?
 	array(
 		'taxonomy' => 'city',
 		'field' => 'id',
-		'terms' => $_GET['region_filter'],
+		'terms' => $_GET['region_filter'] ?: $_GET['region_id'],
 	) :
 	'';
 
