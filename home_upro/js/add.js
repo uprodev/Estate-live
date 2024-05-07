@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 	}
 	function empty_complexes(){
 		$('ul#get_complexes').empty();
-		$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі житловы комплекси</li>');
+		$('ul#get_complexes').append('<li class="option"><label for="complex-0"></label><input type="radio" id="complex-0" name="meta_complex" value="">Всі житлові комплекси</li>');
 		$('#get_complexes_wrap span.current').text('Оберіть ЖК');
 	}
 
